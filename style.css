@@ -1,0 +1,27 @@
+/* Ensures canvas doesn't cause horizontal scrollbars */
+body {
+    overflow-x: hidden;
+  }
+  
+  /* Add smooth scrolling for internal links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Minimal styling for details/summary accordion marker */
+  /* Keeping this in case you decide to use <details> again later */
+  details > summary {
+    list-style: none; /* Remove default marker */
+  }
+  details > summary::-webkit-details-marker {
+    display: none; /* Remove default marker (Chrome) */
+  }
+  details > summary::before {
+    content: '+'; /* Custom marker */
+    margin-right: 0.5em;
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+  }
+  details[open] > summary::before {
+    transform: rotate(45deg);
+  }

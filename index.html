@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Angeles Roleplay</title> <!-- Updated -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link to your custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <script>
+      // Optional: Tailwind config
+      // tailwind.config = { ... }
+    </script>
+</head>
+<body class="bg-gray-100 font-sans overflow-x-hidden">
+
+    <!-- Canvas Background -->
+    <canvas id="backgroundCanvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
+
+    <!-- Main Content Container -->
+    <div class="relative z-10 min-h-screen flex flex-col text-gray-800">
+
+        <!-- Header -->
+        <header class="container mx-auto px-6 py-4 flex justify-between items-center sticky top-0 bg-white/80 backdrop-blur-md shadow-sm z-20">
+            <div class="flex items-center">
+                <!-- Updated Logo URL -->
+                <img src="images/60d450d20bf4bf001437a305.png" alt="Server Logo" class="h-12 w-12 mr-3 object-contain">
+                <span class="text-xl font-bold text-blue-700">Los Angeles Roleplay</span> <!-- Updated -->
+            </div>
+            <!-- Hamburger Button (Mobile) -->
+            <button id="menu-toggle" class="md:hidden ml-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Open Menu">
+                <svg class="w-7 h-7 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <nav>
+                <ul id="nav-links" class="flex items-center md:flex md:space-x-6 md:static md:bg-transparent md:p-0 md:w-auto md:shadow-none fixed top-20 right-6 bg-white/95 shadow-lg rounded-lg p-6 w-48 flex-col md:flex-row space-y-4 md:space-y-0 z-30 transition-all duration-300 ease-in-out hidden md:flex">
+                    <li><a href="#about" class="text-blue-600 hover:text-blue-800 transition-colors duration-300">About</a></li>
+                    <li><a href="#rules" class="text-blue-600 hover:text-blue-800 transition-colors duration-300">Rules</a></li>
+                    <!-- Updated Discord Link -->
+                    <li><a href="https://discord.gg/vN9qXr2GWf" target="_blank" rel="noopener noreferrer" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded transition-colors duration-300 flex items-center justify-center">
+                        <i class="fa-brands fa-discord mr-1"></i> Join Discord
+                    </a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="flex-grow flex flex-col justify-center items-center text-center container mx-auto px-6 py-16 md:py-24">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-blue-800 leading-tight">
+                Welcome to Los Angeles Roleplay <!-- Updated -->
+            </h1>
+            <p class="text-lg md:text-xl text-blue-700 mb-8 max-w-2xl">
+                Join our vibrant Discord community for immersive Liberty County sessions. Active staff, custom vehicles, and engaging scenarios await!
+            </p>
+            <!-- Updated Discord Link -->
+            <a href="https://discord.gg/vN9qXr2GWf" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transform hover:scale-105 transition-all duration-300 inline-flex items-center">
+                <i class="fa-brands fa-discord mr-2"></i> Join Our Discord Server Now!
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container mx-auto px-6 py-16 bg-white/80 backdrop-blur-sm rounded-lg shadow-md my-12 scroll-mt-20">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-8"><i class="fas fa-info-circle mr-2 text-blue-600"></i>About Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700">
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">Our Community</h3>
+                    <p>We foster a welcoming and realistic roleplaying environment based on Emergency Response: Liberty County. Our members range from seasoned RPers to newcomers, aiming for fun and engaging sessions.</p> <!-- Slightly modified -->
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3">What We Offer</h3>
+                    <ul class="list-none space-y-1">
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Active and Fair Staff Team</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Multiple Departments (LEO, Fire, EMS, Civ)</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Custom Assets (Optional)</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Regular Roleplay Sessions & Events</li>
+                        <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Structured & Engaging Discord</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Section (Updated with provided text) -->
+        <section id="rules" class="container mx-auto px-6 py-16 scroll-mt-20">
+             <h2 class="text-3xl font-bold text-center text-blue-800 mb-12"><i class="fas fa-gavel mr-2 text-blue-600"></i>Server Rules</h2>
+
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+                 <!-- Discord Rules -->
+                 <div class="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4 border-b pb-2">
+                        <i class="fab fa-discord mr-2 text-indigo-500"></i>Discord Rules
+                    </h3>
+                    <p class="mb-4 text-gray-600 italic">Welcome to the Discord Rules, here, we will go over some ESSENTIAL rules.</p>
+                    <div class="space-y-3 text-gray-700">
+                        <p><strong>No.1:</strong> No insulting other members by their origin, gender, beliefs, skin color, sexual orientation, identification...</p>
+                        <p><strong>No.2:</strong> No profanity generally, you're allowed to use mild words, not extreme, as long as you're not saying it to someone else.</p>
+                        <p><strong>No.3:</strong> Treat others how you would like to be treated.</p>
+                        <p><strong>No.4:</strong> Use channels for their intended use, don't send pictures in chat channels, instead, do in media. Same applies for others.</p>
+                        <p><strong>No.5:</strong> <i class="fas fa-ad text-red-500 mr-1"></i> NO SELF ADVERTISING, if you want a paid ad or partnership, check our shop, 🛒・shop and ⛔・assistance (inside Discord).</p>
+                    </div>
+                 </div>
+
+                 <!-- In-Game Rules -->
+                 <div class="bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4 border-b pb-2">
+                       <i class="fas fa-gamepad mr-2 text-green-600"></i>In-Game Rules (ERLC)
+                    </h3>
+                    <!-- Server name discrepancy note: Rule text mentions Connecticut, site is Los Angeles RP -->
+                    <p class="mb-4 text-gray-600 italic">Welcome to Connecticut State Roleplay! <em class="text-red-600 font-semibold">(Note: Site name is Los Angeles Roleplay - please adjust rules text if needed)</em><br>Below, we will go over some general rules that you must follow while roleplaying.</p>
+                    <p class="mb-4 text-gray-600">First of all, We aren't a craaaazy strict community, we love having fun, roleplaying and having a good time doing so, but to ensure to have a great time, we all have to follow some rules.</p>
+                    <div class="space-y-3 text-gray-700">
+                         <p><strong>No.1 - RDM: (Random Death Match)</strong><br>Please do not shoot at random players while roleplaying, you wouldn't like that happening to you right? ... RIGHT?</p>
+                         <p><strong>No.2 - VDM: (Vehicle Death Match)</strong><br>Please do not shoot or ram your car into random players while roleplaying.</p>
+                         <p><strong>No.3 - FRP: (Fail Roleplay)</strong><br>Please maintain roleplays similar to real life. Dont bunny hop, or some other actions that may seem unrealistic; Not accepting a detain request, Cuff Rushing, Auto Jailing, etc...</p>
+                         <p><strong>No.4 - NLR: (New Life Rule)</strong><br>If you have passed away, you should not remember any actions in your past life. If you're an LEO, you MAY respond to the same call as long as you dont bring up arguments about your past life.</p>
+                         <p><strong>No.5 - Common Sense:</strong><br>There's a LOT of other rules. Please, do not search any loopholes and use common sense, adhere to your knowledge of RP. If you do not know if something is allowed, feel free to ask to one of our staff! They will be happy to assist you.</p>
+                    </div>
+                 </div>
+             </div>
+
+            <!-- Important Anti-Discrimination Warning -->
+             <div class="mt-12 bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md shadow max-w-4xl mx-auto" role="alert">
+                 <p class="font-bold text-lg mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Zero Tolerance Policy</p>
+                 <p class="uppercase font-semibold">We DO NOT ALLOW ANY FORM OF RACISM, XENOPHOBIA, HOMOPHOBIA AND ANY OTHER INSULT TO THE COMMUNITY.</p>
+                 <p>IF YOU'RE CAUGHT DOING SO, YOU WILL BE BANNED.</p>
+                 <p class="mt-2 text-sm italic">- Signed, @O | AOE | NotYourBussiness..</p>
+             </div>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-gray-300 text-center py-6 mt-16">
+            <p>© 2025 Los Angeles Roleplay. All Rights Reserved.</p> <!-- Updated -->
+            <p class="text-sm mt-1">Not affiliated with Roblox Corporation or Emergency Response: Liberty County Developers.</p>
+            <p class="text-sm mt-1">If you notice any issues with the website, please contact NotYourBussiness.</p>
+        </footer>
+
+    </div> <!-- End Main Content Container -->
+
+    <!-- Link to your JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
